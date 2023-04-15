@@ -53,7 +53,7 @@ class HomeController extends GetxController {
   }
 
   Future<void> checkImage(BuildContext context) async {
-    try {
+   
       var url = Uri.parse('https://api.sightengine.com/1.0/check.json');
       var request = http.MultipartRequest('POST', url);
 
@@ -101,21 +101,6 @@ class HomeController extends GetxController {
           ],
         ),
       );
-    } catch (e) {
-      isLoading.value = false;
-      showDialog<String>(
-        context: context,
-        builder: (BuildContext context) => AlertDialog(
-          title: const Text('Error'),
-          content: Text('Error occured in the API'),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('OK'),
-            ),
-          ],
-        ),
-      );
-    }
+    
   }
 }
