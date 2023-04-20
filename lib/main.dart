@@ -1,21 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:profanity_filter_app/pages/home_page.dart';
+import 'package:profanity_filter_app/profanity/app.dart';
+import 'package:profanity_filter_app/profanity/injecter.dart';
 
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-void main() {
-  runApp(const MyApp());
+  await init();
+  runApp(Profanity());
 }
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      home:  HomePage(),
-    );
-  }
-}
-

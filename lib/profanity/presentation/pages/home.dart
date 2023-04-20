@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../injecter.dart';
 import '../manager/home_controller.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
-  final controller = Get.put(HomeController());
+  final controller = Get.put(HomeController(sl()));
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -80,7 +81,7 @@ class HomePage extends StatelessWidget {
                         fontWeight: FontWeight.bold, color: Colors.black),
                   ),
                   Icon(
-                    Icons.image,
+                    Icons.image_aspect_ratio_outlined,
                     color: Colors.black,
                   ),
                 ],
